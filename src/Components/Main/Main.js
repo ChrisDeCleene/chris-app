@@ -1,4 +1,6 @@
 import React from "react";
+import LeagueSize from "../LeagueSize/LeagueSize";
+import PlayerNames from "../PlayerNames/PlayerNames";
 
 class Main extends React.Component {
   constructor(props) {
@@ -11,25 +13,13 @@ class Main extends React.Component {
   }
 
   render() {
-    const leagueSizes = [8, 10, 12, 14, 16, 20]
-    const display = leagueSizes.map((leagueSize)=> (
-      <option value={leagueSize}
-              key={leagueSize}>{leagueSize}
-      </option>
-    ))
     return(
       <div>
-        <h2>Select League Size</h2>
-        <p>Select Number of Teams</p>
-        <select id="league" onChange={this.handleChange} >
-          {display}
-        </select>
-        <button onClick={this.updateSize} >
-          Submit
-        </button>
+        <LeagueSize onLeagueSizeChange={this.props.onLeagueSizeChange} />
+        <PlayerNames />
       </div>
-    )
-  };
-}
+    );
+  }
+};
 
 export default Main;
