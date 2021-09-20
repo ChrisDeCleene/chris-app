@@ -17,6 +17,7 @@ class LeagueSize extends React.Component {
               key={leagueSize}>{leagueSize}
       </option>
     ))
+<<<<<<< HEAD
     return(
       <div>
         <h2>Select League Size</h2>
@@ -29,6 +30,23 @@ class LeagueSize extends React.Component {
         </button>
       </div>
     )
+=======
+    const isLeagueSize = true;
+    if (isLeagueSize) {
+      return(
+        <div>
+          <h2>Select League Size</h2>
+          <p>Select Number of Teams</p>
+          <select id="league" onChange={this.handleChange} >
+            {display}
+          </select>
+          <button onClick={this.updateSize} >
+            Submit
+          </button>
+        </div>
+      )
+    }
+>>>>>>> cff72467afa659772d15908172af5bbfdd2ff7ff
   };
 }
 
